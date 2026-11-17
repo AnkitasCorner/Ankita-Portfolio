@@ -15,19 +15,18 @@ import "./App.css";
 const projects = [
   {
     number: "01",
-    title: "E-commerce dashboard design",
-    type: "Dashboard · UI/UX Design",
+    title: "MetricFlow",
+    type: "SaaS Dashboard · UI/UX Design",
     color: "lilac",
     symbol: "✳",
     description:
-      "Exploring how thoughtful layouts and horizontally scrollable cards can make store analytics easier to navigate.",
-       link: "https://www.figma.com/proto/U4iqlnY9kT9iFRkG9k5pyO/Untitled?node-id=8-15&t=Y6v8XFcicNiyojoM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=8%3A15",
-  
+      "A centralised analytics dashboard designed to help e-commerce businesses track revenue, monitor performance, and understand customer growth.",
+    link: "https://www.figma.com/proto/gPttNVHxCPkxigmZHerSmB/Untitled?node-id=2-2&p=f&t=vsOcczqCWpaydc7N-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2",
   },
   {
-    number: "03",
-    title: "Coming soon",
-    type: "Future exploration",
+    number: "02",
+    title: "Coming Soon",
+    type: "Future Exploration",
     color: "butter",
     symbol: "♡",
     description:
@@ -57,14 +56,12 @@ function App() {
           <a href="#about">About</a>
           <a href="#contact">Contact ↗</a>
           <a
-  href="https://drive.google.com/file/d/1AHwatAvfJ8LUeXMwYGle__ph94wHLbUI/view?usp=drive_link"
+  href="/resume.pdf"
   target="_blank"
   rel="noreferrer"
-  className="nav-resume"
 >
   View Resume ↗
 </a>
-
         </div>
       </nav>
 
@@ -172,7 +169,7 @@ function App() {
           <div>
             <span className="eyebrow">A FEW THINGS I'VE MADE</span>
             <h2>Little ideas, big feelings<span>.</span></h2>
-            <p>One featured project, and a little room to experiment.</p>
+            <p>A closer look at one idea, with room for the next.</p>
           </div>
 
           <div className="scroll-controls">
@@ -204,39 +201,13 @@ function App() {
                 <span className="project-symbol">{project.symbol}</span>
 
                 {project.number === "01" ? (
-                  <div className="dashboard-preview">
-                    <div className="mini-topbar">
-                      <span>your store ✳</span>
-                      <span>•••</span>
-                    </div>
-                    <div className="mini-stats">
-                      <div>
-                        <small>Total sales</small>
-                        <strong>$24.8k</strong>
-                      </div>
-                      <div>
-                        <small>Orders</small>
-                        <strong>1,248</strong>
-                      </div>
-                    </div>
-                    <div className="mini-chart">
-                      {[35, 55, 43, 75, 48, 88, 65, 95, 70].map(
-                        (height, index) => (
-                          <span
-                            key={index}
-                            style={{ height: `${height}%` }}
-                          />
-                        )
-                      )}
-                    </div>
-                    <div className="mini-footer">
-                      ↗ A closer look at the numbers
-                    </div>
-                  </div>
+                  <img
+                    className="project-cover-image"
+                    src="/images/metricflow-dashboard.png"
+                    alt="MetricFlow SaaS analytics dashboard overview"
+                  />
                 ) : (
-                  <div className="abstract-art">
-                    {project.number === "02" ? "✳  ✿  ♡" : "?"}
-                  </div>
+                  <div className="abstract-art">✳　✿　♡</div>
                 )}
               </div>
 
@@ -245,14 +216,16 @@ function App() {
                   <span className="project-type">{project.type}</span>
                   <h3>{project.title}</h3>
                 </div>
-<a
-  href={project.link}
-  target="_blank"
-  rel="noreferrer"
-  aria-label={`Open ${project.title} in Figma`}
->
-  <ArrowUpRight size={21} />
-</a>
+{project.link ? (
+  <a
+    href="#case-study"
+    aria-label={`View ${project.title} case study`}
+  >
+    <ArrowUpRight size={21} />
+  </a>
+) : (
+  <span className="project-coming-soon" aria-label="Coming soon">♡</span>
+)}
 
               </div>
             </motion.article>
@@ -266,30 +239,156 @@ function App() {
 
       <section className="case-section section-pad" id="case-study">
         <motion.div
-          className="case-card"
+          className="metricflow-intro"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="case-copy">
-            <span className="eyebrow">FEATURED CASE STUDY · 01</span>
-            <h2>Making store insights easier to explore.</h2>
+          <div className="metricflow-intro-copy">
+            <span className="eyebrow">FEATURED PROJECT · 01</span>
+            <p className="metricflow-kicker">A SaaS analytics dashboard concept</p>
+            <h2>Meet <span>MetricFlow.</span></h2>
             <p>
-              An e-commerce dashboard UI concept focused on
-              information hierarchy, analytics cards, and a
-              more approachable visual experience.
+              Turning complex business data into clearer, more approachable
+              insights. MetricFlow brings revenue, sales, and customer metrics
+              together in one dashboard concept for e-commerce teams.
             </p>
             <div className="tag-list">
-              <span>UI Design</span>
-              <span>Dashboard</span>
+              <span>UI/UX Design</span>
+              <span>SaaS Dashboard</span>
+              <span>Data Visualisation</span>
               <span>Figma</span>
-              <span>Interaction exploration</span>
+              <span>Interaction Design</span>
             </div>
-            <a className="button-primary" href="#contact">
-              Let's talk about the project <ArrowUpRight size={17} />
+            <a
+              className="button-primary"
+              href="https://www.figma.com/proto/gPttNVHxCPkxigmZHerSmB/Untitled?node-id=2-2&p=f&t=vsOcczqCWpaydc7N-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Figma Prototype <ArrowUpRight size={17} />
             </a>
+            <p className="metricflow-note">Personal concept project · Designed in Figma · Desktop dashboard</p>
+          </div>
+          <div className="metricflow-hero-image">
+            <img
+              src="/images/metricflow-dashboard.png"
+              alt="MetricFlow dashboard overview showing revenue, orders, customers and conversion rate"
+            />
           </div>
         </motion.div>
+
+        <div className="metricflow-section-heading">
+          <span className="eyebrow">INSIDE THE DASHBOARD</span>
+          <h2>One workspace, <span>multiple insights.</span></h2>
+          <p>Explore the key screens and reporting flow designed for MetricFlow.</p>
+        </div>
+
+        <div className="metricflow-gallery">
+          <figure className="metricflow-shot metricflow-shot-wide">
+            <img src="/images/metricflow-analytics.png" alt="MetricFlow revenue analytics screen with KPI cards and revenue trend chart" loading="lazy" />
+            <figcaption><strong>Revenue analytics</strong><span>Track revenue, paid orders, new customers and conversion rate.</span></figcaption>
+          </figure>
+          <figure className="metricflow-shot">
+            <img src="/images/metricflow-reports.png" alt="MetricFlow reports screen listing revenue, sales and customer reports" loading="lazy" />
+            <figcaption><strong>Reports</strong><span>Navigate between focused performance reports.</span></figcaption>
+          </figure>
+          <figure className="metricflow-shot">
+            <img src="/images/metricflow-customers.png" alt="MetricFlow customer growth report with new customers and conversion metrics" loading="lazy" />
+            <figcaption><strong>Customer growth</strong><span>Review customer acquisition and conversion performance.</span></figcaption>
+          </figure>
+          <figure className="metricflow-shot metricflow-shot-wide">
+            <img src="/images/metricflow-export.png" alt="MetricFlow revenue report with export dialog open and CSV or PDF options" loading="lazy" />
+            <figcaption><strong>Export workflow</strong><span>Choose CSV or PDF before preparing a report export.</span></figcaption>
+          </figure>
+        </div>
+
+        <section className="metricflow-story" aria-label="MetricFlow case study details">
+          <div className="metricflow-story-heading">
+            <span className="eyebrow">THE DESIGN CHALLENGE</span>
+            <h2>From scattered metrics to <span>one clear picture.</span></h2>
+            <p>
+              E-commerce teams may need to review several kinds of performance
+              information at once. This concept explores how a single workspace
+              can make those signals easier to scan and compare.
+            </p>
+          </div>
+          <div className="metricflow-story-grid">
+            <article className="metricflow-story-card story-lilac">
+              <span>01 · THE OPPORTUNITY</span>
+              <h3>Bring key metrics together</h3>
+              <p>
+                Give revenue, paid orders, customer growth and conversion
+                performance a consistent home instead of making people jump
+                between disconnected views.
+              </p>
+            </article>
+            <article className="metricflow-story-card story-peach">
+              <span>02 · THE APPROACH</span>
+              <h3>Make information scannable</h3>
+              <p>
+                Use summary cards for at-a-glance numbers, a trend chart for
+                context, and focused report pages for a closer look.
+              </p>
+            </article>
+            <article className="metricflow-story-card story-yellow">
+              <span>03 · THE INTERACTION</span>
+              <h3>Keep reporting straightforward</h3>
+              <p>
+                Provide a clear route from the reports list to an individual
+                summary, then present CSV and PDF choices in an export dialog.
+              </p>
+            </article>
+          </div>
+          <div className="metricflow-learning">
+            <div>
+              <span className="eyebrow">REFLECTION</span>
+              <h3>What this project helped me explore</h3>
+            </div>
+            <p>
+              MetricFlow gave me an opportunity to practise dashboard information
+              hierarchy, data visualisation, consistency across related screens,
+              and the small interaction details that connect a reporting flow.
+            </p>
+          </div>
+        </section>
+
+        <div className="metricflow-details">
+          <div>
+            <span className="eyebrow">PROJECT SNAPSHOT</span>
+            <h3>Designing for clarity.</h3>
+            <p>
+              The design brings key performance indicators, revenue trends and
+              focused reports into a consistent dashboard experience. The goal
+              is to help users move from a quick overview to a more detailed
+              report without losing context.
+            </p>
+          </div>
+          <div className="metricflow-meta">
+            <p><span>Role</span><strong>UI/UX Designer</strong></p>
+            <p><span>Tool</span><strong>Figma</strong></p>
+            <p><span>Platform</span><strong>Desktop dashboard</strong></p>
+            <p><span>Focus</span><strong>Analytics · Reports · Interaction</strong></p>
+          </div>
+        </div>
+        <p className="disclaimer metricflow-disclaimer">
+          MetricFlow is a self-initiated UI/UX concept. The screens demonstrate
+          the proposed interface and prototype interactions; this is not a live product.
+        </p>
+        <div className="metricflow-final-cta">
+          <div>
+            <span className="eyebrow">WANT TO EXPLORE THE FLOW?</span>
+            <h3>Take a closer look at the prototype.</h3>
+          </div>
+          <a
+            className="button-primary"
+            href="https://www.figma.com/proto/gPttNVHxCPkxigmZHerSmB/Untitled?node-id=2-2&p=f&t=vsOcczqCWpaydc7N-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Explore prototype <ArrowUpRight size={17} />
+          </a>
+        </div>
       </section>
 
       <section className="about-section section-pad" id="about">
@@ -340,9 +439,9 @@ function App() {
 
 
 <a
-  href="https://drive.google.com/file/d/1AHwatAvfJ8LUeXMwYGle__ph94wHLbUI/view?usp=sharing"
+  href="/resume.pdf"
   download="Ankita_Panigrahi_Resume.pdf"
-  className="resume-button"
+  className="nav-resume"
 >
   Download Resume ↓
 </a>

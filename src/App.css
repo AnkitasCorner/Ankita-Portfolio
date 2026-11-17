@@ -743,7 +743,26 @@ h1, h2, h3 {
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
+
+
+.resume-button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 8px 8px 8px 0;
+  border: 2px solid #292522;
+  border-radius: 999px;
+  color: #292522;
+  background: #f7d6cb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
 .resume-button:hover {
+  background: #f5c15d;
+  transform: translateY(-3px);
+}
+
 .nav-resume {
   display: inline-block;
   padding: 9px 16px;
@@ -761,6 +780,209 @@ h1, h2, h3 {
   transform: translateY(-2px);
 }
 
-  background: #f5c15d;
-  transform: translateY(-3px);
+/* MetricFlow project showcase */
+.project-cover-image {
+  width: 88%;
+  height: 235px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 14px 35px #3d315c20;
+  transform: rotate(-2deg);
+}
+.project-coming-soon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid #d9d3c9;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.metricflow-intro {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: clamp(28px, 5vw, 65px);
+  padding: clamp(25px, 5vw, 58px);
+  border-radius: 18px;
+  background: #f5e8ff;
+}
+.metricflow-intro-copy h2 {
+  font-size: clamp(38px, 5vw, 62px);
+  letter-spacing: -3px;
+  line-height: 1.05;
+  margin: 18px 0;
+}
+.metricflow-intro-copy h2 span,
+.metricflow-section-heading h2 span { color: #ed7358; }
+.metricflow-kicker {
+  margin: 25px 0 0;
+  color: #655c70;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.metricflow-intro-copy > p:not(.metricflow-kicker):not(.metricflow-note) {
+  color: #655c70;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.metricflow-intro .tag-list { margin: 20px 0 25px; }
+.metricflow-note {
+  margin: 17px 0 0;
+  color: #777267;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.metricflow-hero-image {
+  padding: 12px;
+  border-radius: 13px;
+  background: #e4dafa;
+  box-shadow: 0 18px 45px #44351c12;
+}
+.metricflow-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+}
+.metricflow-section-heading { margin: 85px 0 30px; }
+.metricflow-section-heading h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+  margin: 14px 0;
+}
+.metricflow-section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.metricflow-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.metricflow-shot-wide { grid-column: 1 / -1; }
+.metricflow-shot {
+  min-width: 0;
+  margin: 0;
+  padding: 13px;
+  border: 1px solid #ebe5dc;
+  border-radius: 13px;
+  background: #fffdf9;
+  box-shadow: 0 10px 30px #44351c0a;
+}
+.metricflow-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+  background: #f5f2ff;
+}
+.metricflow-shot figcaption { padding: 15px 5px 5px; }
+.metricflow-shot figcaption strong {
+  display: block;
+  margin-bottom: 5px;
+  font: 600 16px 'Space Grotesk', sans-serif;
+}
+.metricflow-shot figcaption span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.metricflow-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 65px;
+  padding: 35px;
+  border-radius: 14px;
+  background: #fff0cd;
+}
+.metricflow-details h3 {
+  margin: 15px 0;
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+.metricflow-details > div:first-child p {
+  max-width: 520px;
+  color: #6d6558;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.metricflow-meta p {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  margin: 0;
+  border-bottom: 1px solid #e6d9b9;
+  font-size: 12px;
+}
+.metricflow-meta p span { color: #777267; }
+.metricflow-meta p strong { text-align: right; font-weight: 600; }
+.metricflow-disclaimer { max-width: 780px; margin-top: 20px; }
+
+@media (max-width: 760px) {
+  .metricflow-intro { grid-template-columns: 1fr; }
+  .metricflow-gallery { grid-template-columns: 1fr; }
+  .metricflow-details { grid-template-columns: 1fr; gap: 20px; padding: 25px; }
+  .metricflow-section-heading { margin-top: 60px; }
+  .project-cover-image { height: 210px; }
+}
+
+
+/* MetricFlow case study narrative */
+.metricflow-story { margin-top: 78px; }
+.metricflow-story-heading { max-width: 760px; margin-bottom: 28px; }
+.metricflow-story-heading h2 {
+  margin: 14px 0;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+}
+.metricflow-story-heading h2 span { color: #ed7358; }
+.metricflow-story-heading p,
+.metricflow-story-card p,
+.metricflow-learning p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+.metricflow-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.metricflow-story-card { padding: 25px; border-radius: 13px; min-height: 220px; }
+.metricflow-story-card > span {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.3px; color: #655c70;
+}
+.metricflow-story-card h3 { margin: 22px 0 10px; font-size: 21px; letter-spacing: -.6px; }
+.metricflow-story-card p { margin-bottom: 0; color: #655c70; }
+.story-lilac { background: #eee8ff; }
+.story-peach { background: #ffe9df; }
+.story-yellow { background: #fff0c9; }
+.metricflow-learning {
+  display: grid; grid-template-columns: .8fr 1.2fr; gap: 35px; align-items: start;
+  margin-top: 28px; padding: 30px; border: 1px solid #e8e1d7;
+  border-radius: 13px; background: #fffdf9;
+}
+.metricflow-learning h3 { margin: 12px 0 0; font-size: 24px; letter-spacing: -.8px; }
+.metricflow-learning p { margin: 0; }
+.metricflow-final-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  margin-top: 35px; padding: 28px 32px; border-radius: 14px; background: #e7e1ff;
+}
+.metricflow-final-cta h3 { margin: 10px 0 0; font-size: 24px; letter-spacing: -.8px; }
+@media (max-width: 760px) {
+  .metricflow-story-grid { grid-template-columns: 1fr; }
+  .metricflow-learning { grid-template-columns: 1fr; gap: 15px; padding: 24px; }
+  .metricflow-final-cta { align-items: flex-start; flex-direction: column; padding: 24px; }
 }
