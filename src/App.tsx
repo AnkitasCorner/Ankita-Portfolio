@@ -6,9 +6,7 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
-  Heart,
   Mail,
-  Sparkles,
 } from "lucide-react";
 import "./App.css";
 
@@ -86,9 +84,10 @@ function App() {
           </h1>
 
           <p className="hero-description">
-            Hi, I'm Ankita! I love exploring colorful interfaces,
-            thoughtful interactions, and ways to make digital
-            experiences feel a little more delightful.
+            Hi, I'm Ankita Panigrahi, a curious creative based in Gujarat, India.
+            I'm interested in both UI/UX design and frontend development, and I
+            love bringing thoughtful ideas to life through intuitive interfaces
+            and engaging digital experiences.
           </p>
 
           <div className="hero-actions">
@@ -101,58 +100,22 @@ function App() {
           </div>
         </motion.div>
 
-        <div className="playground" aria-label="Interactive design notes">
-          <motion.div
-            className="blob blob-lilac"
-            animate={{ rotate: [0, 8, -5, 0], y: [0, -8, 0] }}
-            transition={{ duration: 6, repeat: Infinity }}
-          >
-            <Sparkles size={44} />
-          </motion.div>
-
-          <motion.div
-            className="note note-yellow"
-            drag
-            dragMomentum={false}
-            whileHover={{ scale: 1.04, rotate: 0 }}
-            whileDrag={{ scale: 1.08, zIndex: 10 }}
-            initial={{ rotate: 8 }}
-            aria-label="Draggable design note"
-          >
-            <span className="note-label">A LITTLE REMINDER</span>
-            <p>Good design is how it feels, not just how it looks.</p>
-            <span className="note-doodle">♡</span>
-          </motion.div>
-
-          <motion.div
-            className="note note-pink"
-            drag
-            dragMomentum={false}
-            whileHover={{ scale: 1.04, rotate: 0 }}
-            whileDrag={{ scale: 1.08, zIndex: 10 }}
-            initial={{ rotate: -8 }}
-          >
-            <span className="note-label">CURRENTLY INTO</span>
-            <p>Colors, tiny details & happy interfaces.</p>
-            <Heart size={22} className="note-heart" />
-          </motion.div>
-
-          <motion.div
-            className="round-sticker"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-          >
-            DESIGN
-            <br />
-            WITH
-            <br />
-            FEELING ✳
-          </motion.div>
-
-          <div className="playground-caption">
-            <span>✳</span> a little space to play
+        <motion.div
+          className="hero-photo-wrap"
+          initial={{ opacity: 0, y: 20, rotate: 2 }}
+          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+        >
+          <div className="hero-photo-frame">
+            <img
+              src="/images/ANKITA.jpeg"
+              alt="Portrait of Ankita Panigrahi"
+              className="hero-photo"
+            />
           </div>
-        </div>
+          <span className="hero-photo-caption">a little bit of me ✳</span>
+          <span className="hero-photo-sticker">DESIGN<br />WITH<br />FEELING ♡</span>
+        </motion.div>
 
         <a className="scroll-hint" href="#work">
           SCROLL TO EXPLORE ↓
@@ -396,20 +359,22 @@ function App() {
           <span className="eyebrow">A LITTLE ABOUT ME</span>
           <h2>Curious by nature. Designer by choice<span>♡</span></h2>
           <p>
-            I'm a budding UI/UX designer learning to turn
-            everyday problems into thoughtful digital
-            experiences. I enjoy exploring visual systems,
-            experimenting in Figma, and learning why interfaces
-            work the way they do.
+            I'm Ankita, a curious learner based in Gujarat, India, exploring
+            the space where creativity meets technology. I'm interested in
+            UI/UX design and frontend development, and enjoy shaping ideas
+            into clear, thoughtful, and engaging digital experiences.
           </p>
           <p>
-            My goal is to make things that are not only useful,
-            but also feel good to use.
+            I love paying attention to the little details — from visual
+            hierarchy and interactions to the way an interface feels to use.
+            I'm always learning, experimenting, and finding new ways to bring
+            ideas to life.
           </p>
           <div className="skill-pills">
-            <span>Figma</span><span>UI Design</span>
+            <span>Figma</span><span>UI/UX Design</span>
             <span>Wireframing</span><span>Prototyping</span>
-            <span>Visual Design</span>
+            <span>HTML & CSS</span><span>React</span>
+            <span>Frontend Development</span>
           </div>
         </div>
         <div className="about-sticker">

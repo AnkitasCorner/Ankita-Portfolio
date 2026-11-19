@@ -242,6 +242,75 @@ h1, h2, h3 {
 
 .playground-caption span { color: var(--coral); }
 
+
+
+/* Personal introduction portrait */
+.hero-photo-wrap {
+  position: relative;
+  width: min(100%, 440px);
+  min-height: 470px;
+  margin: 0 auto;
+  padding: 18px 22px 30px 18px;
+  isolation: isolate;
+}
+.hero-photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 30px 12px 18px 38px;
+  z-index: -1;
+  background: #e7e1ff;
+  border-radius: 48% 52% 42% 58% / 43% 39% 61% 57%;
+  transform: rotate(-5deg);
+}
+.hero-photo-frame {
+  width: 82%;
+  height: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 9px solid #fffdf9;
+  border-radius: 48% 48% 12px 12px;
+  background: #eeeae4;
+  box-shadow: 0 18px 45px #44351c18;
+  transform: rotate(2deg);
+}
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: grayscale(100%);
+}
+.hero-photo-caption {
+  position: absolute;
+  left: 3px;
+  bottom: 15px;
+  padding: 10px 14px;
+  border-radius: 30px;
+  background: #f8d873;
+  color: #51452f;
+  font: 600 12px 'DM Sans', sans-serif;
+  transform: rotate(-5deg);
+}
+.hero-photo-sticker {
+  position: absolute;
+  right: 0;
+  top: 62px;
+  display: grid;
+  place-content: center;
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  background: #ffdcd5;
+  color: #6b4038;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 1px;
+  transform: rotate(9deg);
+}
+
 .scroll-hint {
   position: absolute;
   bottom: 23px;
@@ -692,6 +761,15 @@ h1, h2, h3 {
     margin: auto;
   }
 
+  .hero-photo-wrap {
+    min-height: 390px;
+    max-width: 390px;
+    padding: 10px 18px 25px;
+  }
+  .hero-photo-frame { height: 350px; }
+  .hero-photo-sticker { right: 2px; top: 38px; width: 82px; height: 82px; font-size: 8px; }
+  .hero-photo-caption { bottom: 7px; left: 0; }
+
   .scroll-hint { bottom: 18px; }
 
   .section-pad { padding-top: 65px; padding-bottom: 65px; }
@@ -726,6 +804,9 @@ h1, h2, h3 {
   .scroll-controls { align-self: flex-end; }
   .note { width: 185px; min-height: 180px; padding: 18px; }
   .note p { font-size: 19px; }
+  .hero-photo-wrap { min-height: 340px; }
+  .hero-photo-frame { width: 84%; height: 305px; }
+  .hero-photo-sticker { width: 72px; height: 72px; font-size: 7px; }
   .round-sticker { width: 80px; height: 80px; font-size: 8px; }
   .case-copy { padding: 25px; }
 }
